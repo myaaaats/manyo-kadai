@@ -1,0 +1,25 @@
+<div class="index">
+  <div class="row">
+    <h1>タスク一覧</h1>
+    <% @tasks.each do |task| %>
+      <div class="col-md-4 col-xs-12">
+        <div class="box">
+          <div class="box-title">
+            <div class="top_bottom">
+              <h5><%= task.title %></h5>
+              <span class="h6"><%= task.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+              <div class="float_right">
+                <%= link_to "詳細",task_path(task.id) %>
+                <%= link_to "編集",edit_task_path(task.id) %>
+                <%= link_to "削除", task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="new_botan">
+    <%= link_to '新しくタスクを投稿する', new_task_path, class: "btn btn-default", data: {"turbolinks" => false} %>
+  </div>
+</div>
