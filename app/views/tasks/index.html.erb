@@ -7,6 +7,7 @@
           <div class="box-title">
             <div class="top_bottom">
               <h5><%= task.title %></h5>
+              <h5><%= task.content %></h5>
               <span class="h6"><%= task.created_at.strftime("%Y-%m-%d %H:%M") %></span>
               <div class="float_right">
                 <%= link_to "詳細",task_path(task.id) %>
