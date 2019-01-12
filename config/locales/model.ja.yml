@@ -6,7 +6,7 @@ ja:
     attributes:
       task:
         title: "タイトル"
-        content: "タスク詳細"
+        content: "タスク内容"
       contact:
         name: "名前"
         email: "メールアドレス"
