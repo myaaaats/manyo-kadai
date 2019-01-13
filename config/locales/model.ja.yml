@@ -7,6 +7,7 @@ ja:
       task:
         title: "タイトル"
         content: "タスク内容"
+        limit: "締切"
       contact:
         name: "名前"
         email: "メールアドレス"
