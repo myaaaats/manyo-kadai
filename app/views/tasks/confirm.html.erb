@@ -9,6 +9,8 @@
       <div class="margin_top50 margin_bottpm50"><h4>タイトル:</h4><%= @task.title %></div>
       <div class="margin_bottom50"><h4>内容:</h4><%= @task.content %></div>
       <div class="margin_bottom50"><h4>締切:</h4><%= @task.limit %></div>
+      <div class="margin_bottom50"><h4>ステータス:</h4><%= @task.status %></div>
+      <div class="margin_bottom50"><h4>優先度:</h4><%= @task.priority %></div>
     </div>
   <div class="margin_top50">
     <%= form.submit :class=>"square_btn" %>
@@ -19,6 +21,8 @@
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
     <%= form.hidden_field :limit %>
+    <%= form.hidden_field :status %>
+    <%= form.hidden_field :priority %>
     <%= form.submit "もどる", name: 'back', :class=>"btn btn-default margin_top50", data: {"turbolinks" => false} %>
   <% end %>
 </div>

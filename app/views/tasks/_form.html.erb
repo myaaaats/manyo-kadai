@@ -24,6 +24,10 @@
     <div class="h3">ステータス</div>
       <%= form.select :status, [["未着手", "未着手"],["着手中", "着手中"],["完了", "完了"]] %>
   </div>
+  <div class="task_url form-group">
+    <div class="h3">優先度</div>
+      <%= form.select :priority, [["低", "低"],["中", "中"],["高", "高"]] %>
+  </div>
   <div class="margin_top50">
     <%= form.submit :class=>"square_btn" %>
   </div>
