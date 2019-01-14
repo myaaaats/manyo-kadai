@@ -8,6 +8,7 @@
     <div class="margin_bottom200">
       <div class="margin_top50 margin_bottpm50"><h4>タイトル:</h4><%= @task.title %></div>
       <div class="margin_bottom50"><h4>内容:</h4><%= @task.content %></div>
+      <div class="margin_bottom50"><h4>締切:</h4><%= @task.limit %></div>
     </div>
   <div class="margin_top50">
     <%= form.submit :class=>"square_btn" %>
@@ -17,6 +18,7 @@
   <%= form_with(model: @task, url: new_task_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
+    <%= form.hidden_field :limit %>
     <%= form.submit "もどる", name: 'back', :class=>"btn btn-default margin_top50", data: {"turbolinks" => false} %>
   <% end %>
 </div>

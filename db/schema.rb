@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_090338) do
   create_table "tasks", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
-    t.date "limit", default: -> { "now()" }, null: false
+    t.datetime "limit", default: -> { "now()" }, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -53,6 +53,7 @@ group :development do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
+  gem 'pry-rails'
 end
 
 group :test do
