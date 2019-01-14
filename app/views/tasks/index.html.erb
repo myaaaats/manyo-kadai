@@ -1,6 +1,19 @@
 <div class="index">
   <div class="row">
+
     <%= link_to "終了期限でソート", tasks_path(sort_expired: "true") %>
+
+    <h3>検索フォーム</h3>
+    <%= form_with(model:@task , local:true, url:tasks_path, method: :get) do |f| %>
+      <h5>タイトルで検索</h5>
+      <%= f.text_field :title_search %>
+      <%= f.hidden_field :search, value: 'true' %>
+
+      <h5>ステータスで検索</h5>
+      <%= f.select :status_search, {"未着手" => :yet , "着手" => :start, "完了" => :complete}, include_blank: true, selected: "" %>
+        <p><%= f.submit "検索" %></p>
+    <% end %>
+
     <h1>タスク一覧</h1>
     <% @tasks.each do |task| %>
       <div class="col-md-4 col-xs-12">

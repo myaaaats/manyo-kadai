@@ -5,7 +5,27 @@ class TasksController < ApplicationController
   def index
     if params[:sort_expired]
       @tasks = Task.limit_order
+    elsif params[:search]
+      case params[:status_search]
+      when "yet" then
+        puts "yet"
+        @tasks = Task.where(status: "未着手")
+      when "start" then
+        puts "start"
+        @tasks = Task.where(status: "着手中")
+      when "complete" then
+        puts "comp"
+        @tasks = Task.where(status: "完了")
+      else
+        puts "else"
+        @tasks = Task.all.order(created_at: :desc)
+      end
+      unless params[:title_search].blank?
+        puts "titlesearch"
+        @tasks = Task.where("title Like ?", "%#{params[:title_search]}%")
+      end
     else
+      puts "other"
       @tasks = Task.desc_order
     end
   end
