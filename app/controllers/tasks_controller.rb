@@ -28,6 +28,7 @@ class TasksController < ApplicationController
       puts "other"
       @tasks = Task.desc_order
     end
+    @tasks = @tasks.page(params[:page]).per(10)
   end
 
   def new

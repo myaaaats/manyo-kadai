@@ -39,5 +39,6 @@
   </div>
   <div class="new_botan">
     <%= link_to '新しくタスクを投稿する', new_task_path, class: "btn btn-default", data: {"turbolinks" => false} %>
+    <%= paginate @tasks %>
   </div>
 </div>
