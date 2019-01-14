@@ -1,8 +1,10 @@
 class Task < ApplicationRecord
 
+  enum status: { 未着手: 0, 着手中: 1, 完了: 2 }
+
   validates :title, presence: true, length: { maximum: 20}
   validates :content, presence: true, length: { maximum: 200}
-  validates :limit, presence: true
+  validates :status, presence: true
   #past_にNo method errorが出るので、一旦コメントアウト
   #validate :limit_cannot_be_in_the_past
 
