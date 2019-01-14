@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_090338) do
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "limit", default: -> { "now()" }, null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
