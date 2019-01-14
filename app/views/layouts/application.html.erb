@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <header>
+      <ul>
+        <li><%= link_to "HOME", root_path %></li>
+        <li><%= link_to "タスク一覧", tasks_path %></li>
+        <li><%= link_to "新規投稿", new_task_path %></li>
+      </ul>
+    </header>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
+    <footer>
+      <p>運営会社DIVE INTO CODE株式会社</p>
+      <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+    </footer>
   </body>
 </html>
