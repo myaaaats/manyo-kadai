@@ -39,6 +39,8 @@ gem 'dotenv-rails'
 gem 'enum'
 gem 'enum_help'
 gem 'ransack'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 gem 'kaminari'
 
 group :development, :test do
